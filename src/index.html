@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- alpine -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <!-- nav -->
+    <nav class="py-9 px-4" x-data="{navOpen:false}">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <img src="../public/assets/logo.svg" alt="" class="order-1 sm:order-2">
+                <img @click="navOpen = !navOpen" src="../public/assets/toggle.svg" alt=""
+                    class="lg:hidden order-2 sm:order-1">
+                <div class="order-2 hidden lg:block">
+                    <ul class="flex gap-16">
+                        <li><a href="" class="text-grey font-bold text-sm font-circular">Home</a></li>
+                        <li><a href="" class="text-grey font-bold text-sm font-circular opacity-50">Discover</a></li>
+                        <li><a href="" class="text-grey font-bold text-sm font-circular opacity-50">Special</a></li>
+                        <li><a href="" class="text-grey font-bold text-sm font-circular opacity-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="order-3 hidden sm:block">
+                    <button class="grow bg-white px-8 py-4 font-bold text-grey rounded-full text-sm">Login</button>
+                    <button class="grow bg-ungu px-8 py-4 font-bold text-white rounded-full text-sm">Sign Up</button>
+                </div>
+            </div>
+        </div>
+        <div x-show="navOpen" x-data="{open:false}"
+            class="z-50 fixed bottom-0 right-0 left-0 bg-white px-4 py-4 border lg:hidden">
+            <ul x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-90" class="flex justify-between">
+                <li><button class="flex justify-center flex-col items-center gap-1 text-ungu"><ion-icon
+                            name="home-outline" class="text-2xl"></ion-icon>
+                        <span class="text-ungu opacity-50 text-base font-bold">Home</span>
+                    </button></li>
+                <li><button class="flex justify-center flex-col items-center gap-1"><ion-icon name="albums-outline"
+                            class="text-2xl text-grey opacity-50"></ion-icon> <span
+                            class="text-grey opacity-50 text-base font-bold">Discover</span></button></li>
+                <li><button class="flex justify-center flex-col items-center gap-1"><ion-icon name="sparkles-outline"
+                            class="text-2xl text-grey opacity-50"></ion-icon> <span
+                            class="text-grey opacity-50 text-base font-bold">Special</span></button></li>
+                <li><button class="flex justify-center flex-col items-center gap-1"><ion-icon name="call-outline"
+                            class="text-2xl text-grey opacity-50"></ion-icon> <span
+                            class="text-grey opacity-50 text-base font-bold">Contact</span></button></li>
+                <li><button @click="open = !open" class="flex justify-center flex-col items-center gap-1"><ion-icon
+                            name="grid-outline" class="text-2xl text-grey opacity-50"></ion-icon> <span
+                            class="text-grey opacity-50 text-base font-bold">More</span></button></li>
+            </ul>
+            <div x-show="open" x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-90"
+                class="absolute bottom-24 left-1/2 translate-x-[-50%] flex gap-4 w-3/4">
+                <button class="grow bg-white px-8 py-4 font-bold text-grey rounded-full text-sm">Login</button>
+                <button class="grow bg-ungu px-8 py-4 font-bold text-white rounded-full text-sm">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+    <!-- hero -->
+    <section>
+        <div class="container mx-auto px-4 py-4 lg:py-16">
+            <div class="grid grid-cols-12 items-center">
+                <div class="col-span-12 lg:col-span-4 order-2 lg:order-1">
+                    <div>
+                        <button
+                            class="px-8 py-4 bg-white text-jambon flex gap-2 text-sm font-bold drop-shadow-myshadow rounded-full mx-auto lg:mx-0">
+                            Explore The World!
+                            <img src="../public/assets/work.svg" alt="">
+                        </button>
+                        <h1
+                            class="mt-4 mb-6 md:mb-[43px] md:mt-[43px] font-bold text-[48px] md:text-[52px] lg:text-[69px] text-grey leading-tight text-center lg:text-start">
+                            Travel <span class="text-jambon">Top
+                                destinations</span> of the world</h1>
+                        <p
+                            class="mb-8  md:mb-[43px] text-center lg:text-start text-grey opacity-50 text-base md:text-[18px] font-inter md:w-3/4 lg:w-full mx-auto">
+                            We always
+                            make our customer
+                            happy by providing
+                            as many choices as possible </p>
+                        <div class="flex flex-col md:flex-row justify-center lg:justify-start gap-6">
+                            <button
+                                class="py-6 px-8 bg-ungu text-white rounded-full drop-shadow-myshadow text-sm font-bold">Get
+                                Started</button>
+                            <button
+                                class="justify-center items-center z-10 flex gap-2 py-6 px-8 bg-white border border-[#EEEEEE] rounded-full text-sm font-bold">
+                                <img src="../public/assets/play.svg" alt="">
+                                Watch Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-8 order-1 lg:order-2">
+                    <div>
+                        <img src="../public/assets/hero.png" class="w-full" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+
+</html>
