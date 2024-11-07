@@ -675,8 +675,8 @@ h1 {
   margin-top: 2rem;
 }
 
-.mb-16 {
-  margin-bottom: 4rem;
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .flex {
@@ -701,6 +701,10 @@ h1 {
 
 .w-full {
   width: 100%;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .grow {
@@ -815,6 +819,10 @@ h1 {
   padding: 2.5rem;
 }
 
+.p-16 {
+  padding: 4rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -855,6 +863,14 @@ h1 {
   padding-bottom: 2.25rem;
 }
 
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -875,6 +891,11 @@ h1 {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-\[48px\] {
@@ -920,6 +941,11 @@ h1 {
 .text-jambon {
   --tw-text-opacity: 1;
   color: rgb(248 94 159 / var(--tw-text-opacity));
+}
+
+.text-orange {
+  --tw-text-opacity: 1;
+  color: rgb(255 87 34 / var(--tw-text-opacity));
 }
 
 .text-ungu {
@@ -1103,6 +1129,10 @@ h1 {
   .lg\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  .lg\:pt-0 {
+    padding-top: 0px;
   }
 
   .lg\:text-start {
